@@ -1,3 +1,5 @@
+// 800 rating problem
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -17,8 +19,7 @@ int main() {
         else {
             danik++;
         }
-    }
-
+    } 
     if(anton==danik){
         cout << "Friendship" << endl;
     } else {
