@@ -20,19 +20,19 @@ int main() {
         int cnt0 = count(s.begin(), s.end(), '0');
         int cnt1 = count(s.begin(), s.end(), '1');
 
-        if(cnt0==cnt1) {
-            cout << "0" << endl;
-            continue;
+        int cnt_of_t = 0;
+
+        for(int i=0;i<lenS;i++){
+            if(s[i] == '0' && cnt1>0){
+                cnt1--, cnt_of_t++;
+            } else if(s[i] == '1' && cnt0>0){
+                cnt0--, cnt_of_t++;
+            } else {
+                break;
+            }
         }
 
-        if(lenS > 4){
-            if(cnt1 != cnt0){
-                cout << max(cnt0, cnt1) << endl;
-            }
-        }  
-        else {
-            cout << max(cnt1, cnt0) - min(cnt1, cnt0) << endl;
-        }
+        cout << lenS-cnt_of_t << endl;
 
     }
 
