@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <title>aolo.design – Social Media & Design Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      --bg-main: #050816;
+      --bg-secondary: #0b1020;
+      --accent: #22d3ee;
+      --accent-soft: #38bdf8;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #0f172a 0, var(--bg-main) 45%, #020617 100%);
+      color: #e5e7eb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, sans-serif;
+    }
+
+    /* Glass panels */
+    .glass {
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 55%),
+                  linear-gradient(to bottom right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      backdrop-filter: blur(20px);
+    }
+
+    /* 3D card hover */
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+    }
+
+    .tilt-card:hover {
+      transform: perspective(900px) rotateX(6deg) rotateY(-6deg) translateY(-4px);
+      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.9);
+      border-color: rgba(56, 189, 248, 0.6);
+    }
+
+    /* Hero orb */
+    .hero-orb {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.5), transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.5), transparent 55%),
+        radial-gradient(circle at 50% 120%, rgba(94, 234, 212, 0.45), transparent 55%);
+      filter: blur(1px);
+    }
+
+    /* Floating animation for hero 3D blob */
+    .float-slow {
+      animation: float-slow 14s ease-in-out infinite;
+    }
+
+    @keyframes float-slow {
+      0%   { transform: translate3d(0, 0, 0) rotate3d(1, 1, 0, 0deg); }
+      25%  { transform: translate3d(-8px, -12px, 0) rotate3d(1, 1, 0, 8deg); }
+      50%  { transform: translate3d(6px, -4px, 0) rotate3d(1, 1, 0, -6deg); }
+      75%  { transform: translate3d(4px, 10px, 0) rotate3d(1, 1, 0, 4deg); }
+      100% { transform: translate3d(0, 0, 0) rotate3d(1, 1, 0, 0deg); }
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 700ms ease-out, transform 700ms ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Custom scrollbar (optional) */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #020617;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #22d3ee, #38bdf8);
+      border-radius: 999px;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-100">
+  <!-- Glow bg -->
+  <div class="pointer-events-none fixed inset-0 hero-orb opacity-60"></div>
+
+  <!-- Navigation -->
+  <header class="relative z-20 border-b border-slate-800/60 bg-black/30 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <div class="flex items-center gap-3">
+        <!-- Simple logo mark -->
+        <div class="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 via-sky-500 to-emerald-400 shadow-lg shadow-cyan-500/40">
+          <span class="text-lg font-semibold text-slate-950 tracking-tight">a</span>
+        </div>
+        <div>
+          <div class="text-base font-semibold tracking-tight">aolo.design</div>
+          <div class="text-xs text-slate-400">Social Media & Visual Studio</div>
+        </div>
+      </div>
+      <nav class="hidden items-center gap-8 text-sm text-slate-300 md:flex">
+        <a href="#services" class="hover:text-cyan-300 transition-colors">Services</a>
+        <a href="#work" class="hover:text-cyan-300 transition-colors">Work</a>
+        <a href="#about" class="hover:text-cyan-300 transition-colors">About</a>
+        <a href="#contact" class="rounded-full border border-cyan-400/70 bg-cyan-400/10 px-4 py-1.5 text-cyan-200 shadow-md shadow-cyan-500/30 hover:bg-cyan-400/20 transition">
+          Let’s talk
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="relative z-10">
+    <section class="mx-auto flex max-w-6xl flex-col gap-16 px-4 pb-24 pt-16 md:flex-row md:items-center md:pt-20">
+      <!-- Text -->
+      <div class="reveal md:w-1/2">
+        <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-slate-900/40 px-3 py-1 text-xs font-medium text-cyan-200">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          Crafting premium social visuals that convert.
+        </p>
+        <h1 class="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+          3D-inspired social visuals
+          <span class="block bg-gradient-to-r from-cyan-400 via-sky-500 to-emerald-400 bg-clip-text text-transparent">
+            for ambitious brands.
+          </span>
+        </h1>
+        <p class="mt-4 max-w-xl text-sm text-slate-300">
+          aolo.design helps you stand out with bold graphics, motion-inspired layouts, and scroll experiences that feel as premium as your brand.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/40 hover:brightness-110 transition">
+            Book a free concept
+            <span class="text-lg">↗</span>
+          </a>
+          <a href="#work" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-cyan-300 transition">
+            View sample work
+            <span class="text-lg">↓</span>
+          </a>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-5 text-xs text-slate-400">
+          <div class="flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+            Social-first branding
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+            Feed & story systems
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+            3D-inspired hero visuals
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero visual -->
+      <div class="reveal md:w-1/2">
+        <div class="relative mx-auto flex max-w-md items-center justify-center">
+          <!-- Main 3D-ish card -->
+          <div class="tilt-card glass relative h-80 w-full overflow-hidden rounded-3xl border border-slate-700/60">
+            <!-- Fake 3D feed -->
+            <div class="absolute -left-10 top-10 h-52 w-40 rotate-[-10deg] rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 shadow-xl shadow-cyan-500/30 border border-slate-700/70">
+              <div class="h-20 rounded-3xl bg-gradient-to-br from-cyan-400 via-sky-500 to-emerald-400"></div>
+              <div class="p-3 text-[10px] text-slate-200">
+                <p class="font-semibold">Sylhet Regency</p>
+                <p class="mt-1 line-clamp-3 text-[9px] text-slate-400">
+                  Launch visuals, reels covers and story system for a 3-star hotel & restaurant.
+                </p>
+              </div>
+            </div>
+
+            <div class="absolute -right-6 top-24 h-56 w-40 rotate-[12deg] rounded-3xl bg-slate-900/90 shadow-2xl shadow-sky-500/40 border border-slate-700/70">
+              <div class="h-24 rounded-3xl bg-gradient-to-br from-fuchsia-500 via-cyan-400 to-sky-500"></div>
+              <div class="p-3 text-[10px] text-slate-200">
+                <p class="font-semibold">Restaurant Social Grid</p>
+                <p class="mt-1 line-clamp-3 text-[9px] text-slate-400">
+                  Cohesive 3x3 grids that feel cinematic on mobile feeds.
+                </p>
+              </div>
+            </div>
+
+            <!-- Floating orb -->
+            <div class="float-slow absolute inset-0">
+              <div class="pointer-events-none absolute -right-24 -top-24 h-48 w-48 rounded-full bg-gradient-to-br from-cyan-400/30 via-sky-500/20 to-emerald-400/20 blur-2xl"></div>
+              <div class="pointer-events-none absolute -bottom-16 left-4 h-40 w-40 rounded-full bg-gradient-to-br from-sky-500/20 via-cyan-400/25 to-emerald-400/10 blur-3xl"></div>
+            </div>
+
+            <!-- Inner caption -->
+            <div class="absolute inset-x-0 bottom-0 p-4">
+              <p class="text-[11px] uppercase tracking-[0.2em] text-slate-400">Social-first studio</p>
+              <p class="mt-1 text-sm text-slate-100">We design feeds that look like premium landing pages.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="mx-auto max-w-6xl px-4 pb-20">
+      <div class="reveal mb-8">
+        <p class="text-xs uppercase tracking-[0.2em] text-cyan-300">Services</p>
+        <h2 class="mt-1 text-2xl font-semibold text-slate-50">What aolo.design delivers</h2>
+        <p class="mt-2 max-w-2xl text-sm text-slate-300">
+          From static posts to scroll animations, we build visuals that keep your brand consistent across Facebook, Instagram and more.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="reveal tilt-card glass rounded-2xl border border-slate-700/60 p-5">
+          <h3 class="text-sm font-semibold text-slate-50">Social media identity</h3>
+          <p class="mt-2 text-xs text-slate-300">
+            Profile & cover designs, highlight covers, story styles and templates so you look cohesive everywhere.
+          </p>
+          <ul class="mt-3 space-y-1 text-[11px] text-slate-400">
+            <li>• Profile & cover packages</li>
+            <li>• Story highlight system</li>
+            <li>• Branding for Facebook & Instagram</li>
+          </ul>
+        </article>
+
+        <article class="reveal tilt-card glass rounded-2xl border border-slate-700/60 p-5">
+          <h3 class="text-sm font-semibold text-slate-50">Content design systems</h3>
+          <p class="mt-2 text-xs text-slate-300">
+            Monthly post & story templates built as a system: promo, testimonial, menu, offer, and more.
+          </p>
+          <ul class="mt-3 space-y-1 text-[11px] text-slate-400">
+            <li>• Post & story kits</li>
+            <li>• Reusable Canva/Figma templates</li>
+            <li>• 3x3 grid concepts</li>
+          </ul>
+        </article>
+
+        <article class="reveal tilt-card glass rounded-2xl border border-slate-700/60 p-5">
+          <h3 class="text-sm font-semibold text-slate-50">Launch visuals & campaigns</h3>
+          <p class="mt-2 text-xs text-slate-300">
+            Visual direction for campaigns, from teaser to launch day, ready for boosting and ads later.
+          </p>
+          <ul class="mt-3 space-y-1 text-[11px] text-slate-400">
+            <li>• Launch & seasonal packs</li>
+            <li>• Feed-first concept boards</li>
+            <li>• Ad-ready assets</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="mx-auto max-w-6xl px-4 pb-20">
+      <div class="reveal mb-8 flex items-end justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-cyan-300">Selected concepts</p>
+          <h2 class="mt-1 text-2xl font-semibold text-slate-50">Concept shots</h2>
+          <p class="mt-2 max-w-xl text-sm text-slate-300">
+            A glimpse into how we think about lighting, depth, and hierarchy inside social layouts.
+          </p>
+        </div>
+        <span class="text-[11px] text-slate-400">Real client work coming soon.</span>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <!-- Concept 1 -->
+        <div class="reveal tilt-card glass relative overflow-hidden rounded-3xl border border-slate-700/60 p-5">
+          <div class="mb-3 flex items-center justify-between text-xs text-slate-300">
+            <span>Sylhet hotel launch grid</span>
+            <span class="rounded-full bg-cyan-400/10 px-2 py-0.5 text-[10px] text-cyan-200">Concept</span>
+          </div>
+          <div class="relative h-56 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-950 to-black">
+            <div class="absolute inset-0 grid grid-cols-3 gap-1 p-2">
+              <div class="rounded-xl bg-gradient-to-br from-cyan-400 via-sky-500 to-emerald-400"></div>
+              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
+              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
+              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
+              <div class="rounded-xl bg-gradient-to-br from-sky-500 via-cyan-400 to-emerald-400"></div>
+              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
+              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
+              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
+              <div class="rounded-xl bg-gradient-to-br from-cyan-400 via-emerald-400 to-sky-500"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Concept 2 -->
+        <div class="reveal tilt-card glass relative overflow-hidden rounded-3xl border border-slate-700/60 p-5">
+          <div class="mb-3 flex items-center justify-between text-xs text-slate-300">
+            <span>Restaurant story sequence</span>
+            <span class="rounded-full bg-cyan-400/10 px-2 py-0.5 text-[10px] text-cyan-200">Concept</span>
+          </div>
+          <div class="relative flex h-56 items-end justify-between gap-2 rounded-2xl bg-gradient-to-tr from-black via-slate-950 to-slate-900 px-4 pb-4">
+            <div class="h-full w-20 rounded-2xl bg-gradient-to-b from-cyan-400 via-sky-500 to-emerald-400"></div>
+            <div class="mb-5 h-40 w-20 rounded-2xl bg-slate-900/90 border border-slate-700/70"></div>
+            <div class="mb-10 h-32 w-20 rounded-2xl bg-slate-900/90 border border-slate-700/70"></div>
+            <div class="mb-[3.25rem] h-28 w-20 rounded-2xl bg-slate-900/90 border border-slate-700/70"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="mx-auto max-w-6xl px-4 pb-20">
+      <div class="reveal grid gap-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-cyan-300">About</p>
+          <h2 class="mt-1 text-2xl font-semibold text-slate-50">Built for social-first brands</h2>
+          <p class="mt-2 text-sm text-slate-300">
+            aolo.design is a small studio focused on visuals that feel premium but ship fast: perfect for hotels, cafes, and lifestyle brands launching in Sylhet and beyond.
+          </p>
+          <p class="mt-2 text-sm text-slate-300">
+            The goal is simple: make your social feeds look like a high-end landing page—clean hierarchy, depth, and motion-inspired layouts that stop the scroll.
+          </p>
+        </div>
+        <div class="tilt-card glass rounded-3xl border border-slate-700/60 p-5 text-xs text-slate-300">
+          <p class="text-[11px] uppercase tracking-[0.2em] text-cyan-200">Prototype process</p>
+          <ul class="mt-3 space-y-2">
+            <li>1. Quick call to understand your brand, menu, or offer.</li>
+            <li>2. 9-grid or story sequence concept designed within 72 hours.</li>
+            <li>3. Revisions, then a full template pack for the month.</li>
+          </ul>
+          <p class="mt-4 text-[11px] text-slate-400">
+            As you grow, we can layer in basic campaign planning and boosted posts while keeping the design system consistent.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mx-auto max-w-6xl px-4 pb-24">
+      <div class="reveal grid gap-10 md:grid-cols-2">
+        <div>
+          <p class="text-xs uppercase tracking-[0.2em] text-cyan-300">Contact</p>
+          <h2 class="mt-1 text-2xl font-semibold text-slate-50">Start with one concept</h2>
+          <p class="mt-2 text-sm text-slate-300">
+            Share a bit about your business and what you want your socials to achieve. You’ll get a reply with a concept idea and a simple package suggestion.
+          </p>
+          <div class="mt-4 space-y-2 text-xs text-slate-400">
+            <p>• Ideal for hotels, restaurants, cafes, salons, and lifestyle brands.</p>
+            <p>• Based in Sylhet, working with clients across Bangladesh.</p>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <form
+          id="contact-form"
+          class="tilt-card glass space-y-4 rounded-3xl border border-slate-700/60 p-5 text-sm"
+        >
+          <div>
+            <label class="mb-1 block text-xs font-medium text-slate-200" for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              required
+              class="w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+              placeholder="Your name"
+            />
+          </div>
+          <div>
+            <label class="mb-1 block text-xs font-medium text-slate-200" for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+              placeholder="you@example.com"
+            />
+          </div>
+          <div>
+            <label class="mb-1 block text-xs font-medium text-slate-200" for="project">Project details</label>
+            <textarea
+              id="project"
+              name="project"
+              rows="4"
+              required
+              class="w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
+              placeholder="Tell me about your brand, industry and what you want from your social media."
+            ></textarea>
+          </div>
+          <div class="flex items-center justify-between gap-3">
+            <button
+              type="submit"
+              class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-xs font-semibold text-slate-950 shadow-lg shadow-cyan-500/40 hover:brightness-110 transition"
+            >
+              Send message
+              <span class="text-base">↗</span>
+            </button>
+            <p id="status" class="text-[11px] text-slate-400"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800/70 bg-black/40 py-4 text-center text-[11px] text-slate-500">
+    © <span id="year"></span> aolo.design · Social media & visual studio
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    revealEls.forEach((el) => observer.observe(el));
+
+    // Contact form: example using Formspree (replace with your endpoint)
+    const form = document.getElementById("contact-form");
+    const statusEl = document.getElementById("status");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      statusEl.textContent = "Sending...";
+      statusEl.classList.remove("text-emerald-400", "text-red-400");
+      statusEl.classList.add("text-slate-400");
+
+      try {
+        // Replace this URL with your Formspree / backend endpoint
+        const endpoint = "https://formspree.io/f/YOUR_FORM_ID";
+
+        const formData = new FormData(form);
+        const plainObj = {};
+        formData.forEach((value, key) => (plainObj[key] = value));
+
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify(plainObj),
+        });
+
+        if (res.ok) {
+          statusEl.textContent = "Message sent. You’ll hear back soon.";
+          statusEl.classList.remove("text-slate-400");
+          statusEl.classList.add("text-emerald-400");
+          form.reset();
+        } else {
+          throw new Error("Network error");
+        }
+      } catch (err) {
+        statusEl.textContent = "Something went wrong. Please try again.";
+        statusEl.classList.remove("text-slate-400");
+        statusEl.classList.add("text-red-400");
+      }
+    });
+  </script>
+</body>
+</html>
