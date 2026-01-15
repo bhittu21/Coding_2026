@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team — aolo.design</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles specific to career page */
+        .career-hero {
+            min-height: 70vh;
+            padding-top: 120px;
+        }
+        
+        .position-card {
+            background: rgba(15, 15, 15, 0.6);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 24px;
+            padding: 48px;
+            margin-bottom: 40px;
+            transition: all 0.4s ease;
+        }
+        
+        .position-card:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+        }
+        
+        .position-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            gap: 24px;
+        }
+        
+        .position-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 50px;
+            color: #a78bfa;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: #a78bfa;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .position-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        
+        .position-meta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            color: #9ca3af;
+            font-size: 15px;
+            margin-bottom: 32px;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .meta-item svg {
+            width: 18px;
+            height: 18px;
+            color: #a78bfa;
+        }
+        
+        .section-block {
+            margin-bottom: 40px;
+        }
+        
+        .block-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 12px;
+            color: #e5e7eb;
+            font-size: 15px;
+        }
+        
+        .skill-item svg {
+            width: 20px;
+            height: 20px;
+            color: #a78bfa;
+            flex-shrink: 0;
+        }
+        
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .requirements-list li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            color: #d1d5db;
+            line-height: 1.7;
+        }
+        
+        .requirements-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+            border-radius: 50%;
+        }
+        
+        .apply-section {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.1));
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 48px;
+        }
+        
+        .apply-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        
+        .apply-description {
+            color: #d1d5db;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        
+        .apply-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .apply-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 50px rgba(139, 92, 246, 0.4);
+        }
+        
+        .apply-email svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-top: 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        
+        .warning-box svg {
+            width: 24px;
+            height: 24px;
+            color: #ef4444;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .warning-text {
+            color: #fca5a5;
+            line-height: 1.7;
+        }
+        
+        .warning-text strong {
+            color: #ef4444;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Design Elements -->
+    <div class="floating-elements">
+        <svg class="float-element pencil" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+        </svg>
+        
+        <svg class="float-element palette" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+        </svg>
+        
+        <svg class="float-element brush" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19l-7-7m2.121 2.121L8 8m6.121 6.121l-2.121-2.121m-4 4L3 21l6-6m5.121-9.121a3 3 0 10-4.243 4.243l8.486 8.486a3 3 0 104.243-4.243l-8.486-8.486z"/>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-main">aolo</span><span class="logo-accent">.design</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#work" class="nav-link">Work</a>
+                    <a href="career.html" class="nav-link" style="color: #a78bfa;">Careers</a>
+                    <div class="nav-contact">
+                        <a href="mailto:hey@aolo.design" class="nav-btn">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="career-hero">
+            <div class="hero-gradient glow-purple"></div>
+            <div class="hero-gradient glow-blue"></div>
+            
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 10;">
+                    <div class="reveal">
+                        <p class="hero-eyebrow">Join Our Creative Team</p>
+                        <h1 class="hero-title" style="font-size: 64px;">Build your career<br/>in <span class="text-gradient">design</span></h1>
+                        <p class="hero-description" style="max-width: 600px; margin: 0 auto 40px;">
+                            We're looking for passionate designers who want to create stunning social media graphics and grow with a fast-moving creative studio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Position Section -->
+        <section style="padding: 80px 0 120px; position: relative; z-index: 10;">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    
+                    <!-- Position Card -->
+                    <div class="position-card reveal">
+                        <div class="position-header">
+                            <div>
+                                <h2 class="position-title">Graphics Design Intern</h2>
+                                <div class="position-meta">
+                                    <div class="meta-item">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        </svg>
+                                        Sylhet, Bangladesh
+                                    </div>
+                                    <div class="meta-item">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                        2 Months Duration
+                                    </div>
+                                    <div class="meta-item">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                        Paid Internship(Remote)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="position-badge">
+                                <span class="badge-dot"></span>
+                                Open Now
+                            </div>
+                        </div>
+
+                        <!-- About the Role -->
+                        <div class="section-block">
+                            <h3 class="block-title">About the Role</h3>
+                            <p style="color: #d1d5db; line-height: 1.8;">
+                                We're seeking a creative and motivated Graphics Design Intern to join our team for a 2-month paid internship. You'll work on real client projects, creating scroll-stopping social media graphics for hotels, restaurants, and lifestyle brands. This is a hands-on opportunity to build your portfolio, learn industry best practices, and grow your design skills in a fast-paced creative environment.
+                            </p>
+                        </div>
+
+                        <!-- Required Skills -->
+                        <div class="section-block">
+                            <h3 class="block-title">Required Skills</h3>
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Canva (Advanced)
+                                </div>
+                                <div class="skill-item">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Adobe Photoshop
+                                </div>
+                                <div class="skill-item">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Adobe Illustrator
+                                </div>
+                                <div class="skill-item">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Typography
+                                </div>
+                                <div class="skill-item">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Color Theory
+                                </div>
+                                <div class="skill-item">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    Social Media Design
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- What You'll Do -->
+                        <div class="section-block">
+                            <h3 class="block-title">What You'll Do</h3>
+                            <ul class="requirements-list">
+                                <li>Create stunning Instagram posts, stories, reels, and carousel designs for client brands</li>
+                                <li>Design promotional graphics, menu cards, and digital marketing materials</li>
+                                <li>Collaborate with the team to develop creative concepts and visual strategies</li>
+                                <li>Maintain brand consistency across all design deliverables</li>
+                                <li>Participate in brainstorming sessions and contribute creative ideas</li>
+                                <li>Revise and refine designs based on feedback from clients and team members</li>
+                                <li>Stay updated with the latest design trends and social media best practices</li>
+                            </ul>
+                        </div>
+
+                        <!-- What We're Looking For -->
+                        <div class="section-block">
+                            <h3 class="block-title">What We're Looking For</h3>
+                            <ul class="requirements-list">
+                                <li>Strong portfolio demonstrating creative design work (required)</li>
+                                <li>Proficiency in Canva, Adobe Photoshop, and Illustrator</li>
+                                <li>Understanding of typography, color theory, and composition</li>
+                                <li>Passion for social media and current design trends</li>
+                                <li>Excellent attention to detail and ability to meet deadlines</li>
+                                <li>Strong communication skills and ability to work in a team</li>
+                                <li>Self-motivated with a willingness to learn and grow</li>
+                                <li>Currently pursuing or recently completed a degree in Design or related field (preferred)</li>
+                            </ul>
+                        </div>
+
+                        <!-- What You'll Get -->
+                        <div class="section-block">
+                            <h3 class="block-title">What You'll Get</h3>
+                            <ul class="requirements-list">
+                                <li>Paid internship with competitive compensation</li>
+                                <li>Hands-on experience working on real client projects</li>
+                                <li>Mentorship from experienced designers</li>
+                                <li>Portfolio-building opportunities with premium brands</li>
+                                <li>Flexible working hours and remote-friendly environment</li>
+                                <li>Certificate of completion at the end of the internship</li>
+                                <li>Potential for full-time employment based on performance</li>
+                            </ul>
+                        </div>
+
+                        <!-- Apply Section -->
+                        <div class="apply-section">
+                            <h3 class="apply-title">Ready to Apply?</h3>
+                            <p class="apply-description">
+                                Send us your CV, portfolio, and a brief introduction about yourself. Share links to your work on Behance, Dribbble, or a Google Drive folder with view access. We want to see your creativity in action!
+                            </p>
+                            <p class="apply-description" style="margin-bottom: 32px;">
+                                <strong style="color: #ffffff;">What to include:</strong><br>
+                                • Your updated CV/Resume<br>
+                                • Portfolio links (Behance, Dribbble, personal website, etc.)<br>
+                                • Google Drive folder with your best design work (Optional)<br>
+                                • A short introduction explaining why you want to join aolo.design
+                            </p>
+                            <a href="mailto:career@aolo.design?subject=Application for Graphics Design Intern Position" class="apply-email">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                                Apply via Email: career@aolo.design
+                            </a>
+
+                            <!-- Warning Box -->
+                            <div class="warning-box">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                                </svg>
+                                <div class="warning-text">
+                                    <strong>Important:</strong> Please do not call us directly regarding this position. All applications must be submitted via email to career@aolo.design. We will review your application and contact shortlisted candidates for the next steps.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <span class="logo-main">aolo</span><span class="logo-accent">.design</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-link">Instagram</a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer-link">Facebook</a>
+                    <a href="mailto:hey@aolo.design" class="footer-link">Email</a>
+                    <a href="mailto:career@aolo.design" class="footer-link">Careers</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-text">© 2026 aolo.design. Graphics & AI that drive results.</p>
+                <p class="footer-text">Sylhet, Bangladesh</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
