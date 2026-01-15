@@ -41,6 +41,23 @@ if (heroVisual) {
     });
 }
 
+// Enhanced parallax for floating design elements
+const floatingElements = document.querySelectorAll('.float-element');
+if (floatingElements.length > 0) {
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        
+        floatingElements.forEach((element, index) => {
+            const speed = (index + 1) * 0.5;
+            const x = (mouseX - 0.5) * speed * 20;
+            const y = (mouseY - 0.5) * speed * 20;
+            
+            element.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    });
+}
+
 // Service card hover effects
 document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
@@ -60,5 +77,41 @@ document.querySelectorAll('.work-card').forEach(card => {
     
     card.addEventListener('mouseleave', function() {
         this.style.borderColor = 'rgba(255, 255, 255, 0.05)';
+    });
+});
+
+// Add subtle cursor effect
+const cursor = document.createElement('div');
+cursor.className = 'custom-cursor';
+cursor.style.cssText = `
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(139, 92, 246, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease;
+    display: none;
+`;
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX - 10 + 'px';
+    cursor.style.top = e.clientY - 10 + 'px';
+    cursor.style.display = 'block';
+});
+
+// Scale cursor on hover over interactive elements
+const interactiveElements = document.querySelectorAll('a, button, .service-card, .work-card');
+interactiveElements.forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'scale(1.5)';
+        cursor.style.borderColor = 'rgba(139, 92, 246, 0.8)';
+    });
+    
+    element.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'scale(1)';
+        cursor.style.borderColor = 'rgba(139, 92, 246, 0.5)';
     });
 });

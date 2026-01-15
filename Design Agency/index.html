@@ -7,6 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Floating Design Elements -->
+    <div class="floating-elements">
+        <svg class="float-element pencil" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+        </svg>
+        
+        <svg class="float-element ruler" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x="3" y="3" width="18" height="18" rx="2"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7v4M12 7v4M17 7v4M7 17v-4M12 17v-4M17 17v-4"/>
+        </svg>
+        
+        <svg class="float-element palette" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+        </svg>
+        
+        <svg class="float-element compass" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle stroke-linecap="round" stroke-linejoin="round" stroke-width="2" cx="12" cy="12" r="10"/>
+            <polygon stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+        </svg>
+        
+        <svg class="float-element brush" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19l-7-7m2.121 2.121L8 8m6.121 6.121l-2.121-2.121m-4 4L3 21l6-6m5.121-9.121a3 3 0 10-4.243 4.243l8.486 8.486a3 3 0 104.243-4.243l-8.486-8.486z"/>
+        </svg>
+        
+        <svg class="float-element vector" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polygon stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="12 2 2 7 12 12 22 7 12 2"/>
+            <polyline stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="2 17 12 22 22 17"/>
+            <polyline stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="2 12 12 17 22 12"/>
+        </svg>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -18,7 +49,14 @@
                     <a href="#services" class="nav-link">Services</a>
                     <a href="#work" class="nav-link">Work</a>
                     <a href="#book-call" class="nav-link">Book Call</a>
-                    <a href="#contact" class="nav-btn">Contact</a>
+                    <div class="nav-contact">
+                        <a href="tel:+8801989763686" class="nav-btn">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            +880 1989-763686
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -34,14 +72,14 @@
                 <div class="hero-grid">
                     <!-- Left: Content -->
                     <div class="hero-content reveal">
-                        <p class="hero-eyebrow">Social-first studio for ambitious brands</p>
+                        <p class="hero-eyebrow">Social-first design studio for ambitious brands</p>
                         <h1 class="hero-title">
-                            Social visuals<br/>
-                            that feel<br/>
-                            <span class="text-gradient">premium</span>
+                            Graphics that<br/>
+                            demand<br/>
+                            <span class="text-gradient">attention</span>
                         </h1>
                         <p class="hero-description">
-                            We craft scroll-stopping content and brand visuals for hotels, restaurants, and lifestyle brands. From Sylhet to beyond—your digital presence, elevated.
+                            We create stunning social media graphics, manage your brand presence, and build custom AI chatbots. From Sylhet to beyond—transforming brands with design and intelligence.
                         </p>
                         <div class="hero-actions">
                             <a href="#book-call" class="btn-primary">
@@ -74,7 +112,11 @@
                             <div class="visual-content">
                                 <div class="visual-image">
                                     <div class="visual-placeholder">
-                                        <div class="placeholder-icon"></div>
+                                        <svg class="placeholder-icon-svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/>
+                                            <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                                            <polyline points="21 15 16 10 5 21" stroke-width="2"/>
+                                        </svg>
                                         <div class="placeholder-text-1"></div>
                                         <div class="placeholder-text-2"></div>
                                     </div>
@@ -108,14 +150,14 @@
                     <p class="section-eyebrow">Let's Connect</p>
                     <h2 class="section-title">Plan your digital launch</h2>
                     <p class="section-description">
-                        Book a free 30-minute strategy call and discover how we can elevate your brand's social presence with premium visuals.
+                        Book a free 30-minute strategy call and discover how we can elevate your brand with stunning graphics and smart automation.
                     </p>
                 </div>
                 
                 <div class="calendly-card reveal">
                     <div class="calendly-container">
                         <iframe
-                            src="https://calendly.com/YOUR_LINK"
+                            src="https://calendly.com/aolo-software/30min"
                             title="Book a meeting with aolo.design"
                             loading="lazy"
                         ></iframe>
@@ -129,22 +171,45 @@
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-eyebrow">What We Offer</p>
-                    <h2 class="section-title">Premium content,<br/>consistent results</h2>
+                    <h2 class="section-title">Design & intelligence<br/>that drives results</h2>
                     <p class="section-description">
-                        Everything you need to build a scroll-stopping social presence and stand out from the competition.
+                        From eye-catching graphics to AI-powered solutions—everything you need to dominate social media and engage customers.
                     </p>
                 </div>
                 
                 <div class="services-grid">
-                    <!-- Social Content -->
+                    <!-- Social Media Graphics -->
                     <div class="service-card reveal">
                         <div class="service-icon">
                             <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                         </div>
-                        <h3 class="service-title">Social Content</h3>
-                        <p class="service-description">Instagram posts, stories, and reels designed to capture attention, engage audiences, and build your brand identity across platforms.</p>
+                        <h3 class="service-title">Social Media Graphics</h3>
+                        <p class="service-description">Stunning Instagram posts, stories, reels, and carousel designs that stop thumbs mid-scroll and make your brand unforgettable.</p>
+                    </div>
+                    
+                    <!-- Social Media Management -->
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Social Media Management</h3>
+                        <p class="service-description">Full-service management including content creation, scheduling, community engagement, and analytics to grow your presence.</p>
+                    </div>
+                    
+                    <!-- Custom AI Chatbots -->
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                <circle cx="12" cy="9" r="2" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Custom AI Chatbots</h3>
+                        <p class="service-description">Intelligent chatbots trained on your business data to handle customer inquiries 24/7, automate bookings, and boost conversions.</p>
                     </div>
                     
                     <!-- Brand Identity -->
@@ -154,19 +219,19 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
                             </svg>
                         </div>
-                        <h3 class="service-title">Brand Identity</h3>
-                        <p class="service-description">Cohesive visual systems including logos, color palettes, and comprehensive brand guidelines that define your unique presence.</p>
+                        <h3 class="service-title">Brand Identity Design</h3>
+                        <p class="service-description">Complete visual identity systems including logos, color palettes, typography, and brand guidelines that define your unique presence.</p>
                     </div>
                     
-                    <!-- Digital Assets -->
+                    <!-- Digital Marketing -->
                     <div class="service-card reveal">
                         <div class="service-icon">
                             <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                             </svg>
                         </div>
-                        <h3 class="service-title">Digital Assets</h3>
-                        <p class="service-description">Menu designs, promotional graphics, and digital collateral that convert casual browsers into loyal customers.</p>
+                        <h3 class="service-title">Digital Marketing</h3>
+                        <p class="service-description">Strategic campaigns across Facebook, Instagram, and Google Ads to reach your ideal customers and maximize ROI.</p>
                     </div>
                     
                     <!-- WordPress Development -->
@@ -177,29 +242,7 @@
                             </svg>
                         </div>
                         <h3 class="service-title">WordPress Development</h3>
-                        <p class="service-description">Custom WordPress websites and themes built for performance, scalability, and stunning design that converts visitors.</p>
-                    </div>
-                    
-                    <!-- Web Development -->
-                    <div class="service-card reveal">
-                        <div class="service-icon">
-                            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Web Development</h3>
-                        <p class="service-description">Full-stack web solutions from landing pages to complex web applications, built with modern technologies and best practices.</p>
-                    </div>
-                    
-                    <!-- Strategy & Consulting -->
-                    <div class="service-card reveal">
-                        <div class="service-icon">
-                            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Strategy & Consulting</h3>
-                        <p class="service-description">Digital strategy sessions to align your brand vision with actionable plans that drive measurable growth and engagement.</p>
+                        <p class="service-description">Custom WordPress websites that load fast, look stunning, and convert visitors into customers with seamless user experiences.</p>
                     </div>
                 </div>
             </div>
@@ -212,7 +255,7 @@
                     <p class="section-eyebrow">Portfolio</p>
                     <h2 class="section-title">Work that speaks<br/>for itself</h2>
                     <p class="section-description">
-                        A curated selection of our recent projects for brands that value premium aesthetics and performance.
+                        A curated selection of our recent projects for brands that value stunning design and measurable results.
                     </p>
                 </div>
                 
@@ -231,14 +274,18 @@
                         <div class="work-image">
                             <div class="work-overlay"></div>
                             <div class="work-placeholder">
-                                <div class="placeholder-box"></div>
+                                <svg class="placeholder-icon-svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                                    <polyline points="21 15 16 10 5 21" stroke-width="2"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="work-content">
-                            <h3 class="work-title">Luxury Hotel Campaign</h3>
-                            <p class="work-description">Complete social media rebrand and content strategy for a boutique property in Sylhet, focusing on premium aesthetics.</p>
+                            <h3 class="work-title">Luxury Hotel Social Campaign</h3>
+                            <p class="work-description">Complete social media graphics package with 60+ posts, stories, and reels for a boutique property in Sylhet.</p>
                             <div class="work-tags">
-                                <span class="work-tag">Hospitality</span>
+                                <span class="work-tag">Social Graphics</span>
                                 <span class="work-tag">Branding</span>
                             </div>
                         </div>
@@ -249,15 +296,17 @@
                         <div class="work-image">
                             <div class="work-overlay work-overlay-alt"></div>
                             <div class="work-placeholder">
-                                <div class="placeholder-box"></div>
+                                <svg class="placeholder-icon-svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="work-content">
-                            <h3 class="work-title">Restaurant Launch</h3>
-                            <p class="work-description">Full brand identity, launch campaign, and ongoing social content for a premium dining establishment.</p>
+                            <h3 class="work-title">Restaurant AI Assistant</h3>
+                            <p class="work-description">Custom chatbot handling reservations, menu inquiries, and customer support for a premium dining establishment.</p>
                             <div class="work-tags">
-                                <span class="work-tag">F&B</span>
-                                <span class="work-tag">Social Content</span>
+                                <span class="work-tag">AI Chatbot</span>
+                                <span class="work-tag">Automation</span>
                             </div>
                         </div>
                     </div>
@@ -267,15 +316,17 @@
                         <div class="work-image">
                             <div class="work-overlay work-overlay-pink"></div>
                             <div class="work-placeholder">
-                                <div class="placeholder-box"></div>
+                                <svg class="placeholder-icon-svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="work-content">
-                            <h3 class="work-title">Lifestyle Brand Website</h3>
-                            <p class="work-description">Custom WordPress e-commerce platform with integrated social feeds and seamless checkout experience.</p>
+                            <h3 class="work-title">Social Media Management</h3>
+                            <p class="work-description">6-month social management including content creation, posting, engagement, and growth for a lifestyle brand.</p>
                             <div class="work-tags">
-                                <span class="work-tag">WordPress</span>
-                                <span class="work-tag">eCommerce</span>
+                                <span class="work-tag">Management</span>
+                                <span class="work-tag">Content</span>
                             </div>
                         </div>
                     </div>
@@ -285,15 +336,17 @@
                         <div class="work-image">
                             <div class="work-overlay work-overlay-cyan"></div>
                             <div class="work-placeholder">
-                                <div class="placeholder-box"></div>
+                                <svg class="placeholder-icon-svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="work-content">
-                            <h3 class="work-title">Tech Startup Branding</h3>
-                            <p class="work-description">Complete brand system and web application design for an innovative SaaS platform in the tech space.</p>
+                            <h3 class="work-title">Brand Identity System</h3>
+                            <p class="work-description">Complete visual identity with logo, brand guidelines, and social media template system for a tech startup.</p>
                             <div class="work-tags">
-                                <span class="work-tag">SaaS</span>
-                                <span class="work-tag">UI/UX</span>
+                                <span class="work-tag">Branding</span>
+                                <span class="work-tag">Design System</span>
                             </div>
                         </div>
                     </div>
@@ -307,16 +360,33 @@
             
             <div class="container">
                 <div class="cta-content reveal">
-                    <h2 class="cta-title">Ready to elevate<br/>your brand?</h2>
+                    <h2 class="cta-title">Ready to dominate<br/>social media?</h2>
                     <p class="cta-description">
-                        Let's create visuals that command attention and drive real results. Book your free consultation and let's bring your vision to life.
+                        Let's create graphics that demand attention, manage your social presence, and automate customer engagement with AI.
                     </p>
-                    <a href="#book-call" class="btn-primary btn-large">
-                        Book a free concept
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                        </svg>
-                    </a>
+                    <div class="cta-buttons">
+                        <a href="#book-call" class="btn-primary btn-large">
+                            Book a free concept
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="cta-contact">
+                        <a href="mailto:hey@aolo.design" class="contact-link">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            hey@aolo.design
+                        </a>
+                        <span class="contact-divider">|</span>
+                        <a href="tel:+8801989763686" class="contact-link">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            +880 1989-763686
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -332,11 +402,12 @@
                 <div class="footer-links">
                     <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="footer-link">Instagram</a>
                     <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="footer-link">Facebook</a>
-                    <a href="mailto:hello@aolo.design" class="footer-link">Email</a>
+                    <a href="mailto:hey@aolo.design" class="footer-link">Email</a>
+                    <a href="tel:+8801989763686" class="footer-link">Call</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-text">© 2026 aolo.design. Social-first visuals that feel premium.</p>
+                <p class="footer-text">© 2026 aolo.design. Graphics & AI that drive results.</p>
                 <p class="footer-text">Sylhet, Bangladesh</p>
             </div>
         </div>
