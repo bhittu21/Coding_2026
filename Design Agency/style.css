@@ -365,6 +365,9 @@ body {
 .hero-visual {
     position: relative;
     animation: float 6s ease-in-out infinite;
+    /* ADD THESE TWO LINES: */
+    width: 21vw;
+    margin-left: auto;
 }
 
 @keyframes float {
