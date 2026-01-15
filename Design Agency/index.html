@@ -1,461 +1,400 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>aolo.design – Social Media & Design Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root {
-      --bg-main: #050816;
-      --bg-secondary: #0b1020;
-      --accent: #22d3ee;
-      --accent-soft: #38bdf8;
-    }
-
-    body {
-      background: radial-gradient(circle at top, #0f172a 0, var(--bg-main) 45%, #020617 100%);
-      color: #e5e7eb;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, sans-serif;
-    }
-
-    /* Glass panels */
-    .glass {
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 55%),
-                  linear-gradient(to bottom right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
-      border: 1px solid rgba(148, 163, 184, 0.2);
-      backdrop-filter: blur(20px);
-    }
-
-    /* 3D card hover */
-    .tilt-card {
-      transform-style: preserve-3d;
-      transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
-    }
-
-    .tilt-card:hover {
-      transform: perspective(900px) rotateX(6deg) rotateY(-6deg) translateY(-4px);
-      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.9);
-      border-color: rgba(56, 189, 248, 0.6);
-    }
-
-    /* Hero orb */
-    .hero-orb {
-      background:
-        radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.5), transparent 55%),
-        radial-gradient(circle at 80% 80%, rgba(56, 189, 248, 0.5), transparent 55%),
-        radial-gradient(circle at 50% 120%, rgba(94, 234, 212, 0.45), transparent 55%);
-      filter: blur(1px);
-    }
-
-    /* Floating animation for hero 3D blob */
-    .float-slow {
-      animation: float-slow 14s ease-in-out infinite;
-    }
-
-    @keyframes float-slow {
-      0%   { transform: translate3d(0, 0, 0) rotate3d(1, 1, 0, 0deg); }
-      25%  { transform: translate3d(-8px, -12px, 0) rotate3d(1, 1, 0, 8deg); }
-      50%  { transform: translate3d(6px, -4px, 0) rotate3d(1, 1, 0, -6deg); }
-      75%  { transform: translate3d(4px, 10px, 0) rotate3d(1, 1, 0, 4deg); }
-      100% { transform: translate3d(0, 0, 0) rotate3d(1, 1, 0, 0deg); }
-    }
-
-    /* Scroll reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 700ms ease-out, transform 700ms ease-out;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Custom scrollbar (optional) */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #020617;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(to bottom, #22d3ee, #38bdf8);
-      border-radius: 999px;
-    }
-  </style>
-</head>
-<body class="min-h-screen text-slate-100">
-  <!-- Glow bg -->
-  <div class="pointer-events-none fixed inset-0 hero-orb opacity-60"></div>
-
-  <!-- Navigation -->
-  <header class="relative z-20 border-b border-slate-800/60 bg-black/30 backdrop-blur-xl">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-      <div class="flex items-center gap-3">
-        <!-- Simple logo mark -->
-        <div class="flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 via-sky-500 to-emerald-400 shadow-lg shadow-cyan-500/40">
-          <span class="text-lg font-semibold text-slate-950 tracking-tight">a</span>
-        </div>
-        <div>
-          <div class="text-base font-semibold tracking-tight">aolo.design</div>
-          <div class="text-xs text-slate-400">Social Media & Visual Studio</div>
-        </div>
-      </div>
-      <nav class="hidden items-center gap-8 text-sm text-slate-300 md:flex">
-        <a href="#services" class="hover:text-cyan-300 transition-colors">Services</a>
-        <a href="#work" class="hover:text-cyan-300 transition-colors">Work</a>
-        <a href="#about" class="hover:text-cyan-300 transition-colors">About</a>
-        <a href="#contact" class="rounded-full border border-cyan-400/70 bg-cyan-400/10 px-4 py-1.5 text-cyan-200 shadow-md shadow-cyan-500/30 hover:bg-cyan-400/20 transition">
-          Let’s talk
-        </a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <main class="relative z-10">
-    <section class="mx-auto flex max-w-6xl flex-col gap-16 px-4 pb-24 pt-16 md:flex-row md:items-center md:pt-20">
-      <!-- Text -->
-      <div class="reveal md:w-1/2">
-        <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-slate-900/40 px-3 py-1 text-xs font-medium text-cyan-200">
-          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-          Crafting premium social visuals that convert.
-        </p>
-        <h1 class="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-          3D-inspired social visuals
-          <span class="block bg-gradient-to-r from-cyan-400 via-sky-500 to-emerald-400 bg-clip-text text-transparent">
-            for ambitious brands.
-          </span>
-        </h1>
-        <p class="mt-4 max-w-xl text-sm text-slate-300">
-          aolo.design helps you stand out with bold graphics, motion-inspired layouts, and scroll experiences that feel as premium as your brand.
-        </p>
-
-        <div class="mt-8 flex flex-wrap items-center gap-4">
-          <a href="#contact" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/40 hover:brightness-110 transition">
-            Book a free concept
-            <span class="text-lg">↗</span>
-          </a>
-          <a href="#work" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-cyan-300 transition">
-            View sample work
-            <span class="text-lg">↓</span>
-          </a>
-        </div>
-
-        <div class="mt-6 flex flex-wrap gap-5 text-xs text-slate-400">
-          <div class="flex items-center gap-2">
-            <span class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
-            Social-first branding
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
-            Feed & story systems
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
-            3D-inspired hero visuals
-          </div>
-        </div>
-      </div>
-
-      <!-- Hero visual -->
-      <div class="reveal md:w-1/2">
-        <div class="relative mx-auto flex max-w-md items-center justify-center">
-          <!-- Main 3D-ish card -->
-          <div class="tilt-card glass relative h-80 w-full overflow-hidden rounded-3xl border border-slate-700/60">
-            <!-- Fake 3D feed -->
-            <div class="absolute -left-10 top-10 h-52 w-40 rotate-[-10deg] rounded-3xl bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 shadow-xl shadow-cyan-500/30 border border-slate-700/70">
-              <div class="h-20 rounded-3xl bg-gradient-to-br from-cyan-400 via-sky-500 to-emerald-400"></div>
-              <div class="p-3 text-[10px] text-slate-200">
-                <p class="font-semibold">Sylhet Regency</p>
-                <p class="mt-1 line-clamp-3 text-[9px] text-slate-400">
-                  Launch visuals, reels covers and story system for a 3-star hotel & restaurant.
-                </p>
-              </div>
-            </div>
-
-            <div class="absolute -right-6 top-24 h-56 w-40 rotate-[12deg] rounded-3xl bg-slate-900/90 shadow-2xl shadow-sky-500/40 border border-slate-700/70">
-              <div class="h-24 rounded-3xl bg-gradient-to-br from-fuchsia-500 via-cyan-400 to-sky-500"></div>
-              <div class="p-3 text-[10px] text-slate-200">
-                <p class="font-semibold">Restaurant Social Grid</p>
-                <p class="mt-1 line-clamp-3 text-[9px] text-slate-400">
-                  Cohesive 3x3 grids that feel cinematic on mobile feeds.
-                </p>
-              </div>
-            </div>
-
-            <!-- Floating orb -->
-            <div class="float-slow absolute inset-0">
-              <div class="pointer-events-none absolute -right-24 -top-24 h-48 w-48 rounded-full bg-gradient-to-br from-cyan-400/30 via-sky-500/20 to-emerald-400/20 blur-2xl"></div>
-              <div class="pointer-events-none absolute -bottom-16 left-4 h-40 w-40 rounded-full bg-gradient-to-br from-sky-500/20 via-cyan-400/25 to-emerald-400/10 blur-3xl"></div>
-            </div>
-
-            <!-- Inner caption -->
-            <div class="absolute inset-x-0 bottom-0 p-4">
-              <p class="text-[11px] uppercase tracking-[0.2em] text-slate-400">Social-first studio</p>
-              <p class="mt-1 text-sm text-slate-100">We design feeds that look like premium landing pages.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="mx-auto max-w-6xl px-4 pb-20">
-      <div class="reveal mb-8">
-        <p class="text-xs uppercase tracking-[0.2em] text-cyan-300">Services</p>
-        <h2 class="mt-1 text-2xl font-semibold text-slate-50">What aolo.design delivers</h2>
-        <p class="mt-2 max-w-2xl text-sm text-slate-300">
-          From static posts to scroll animations, we build visuals that keep your brand consistent across Facebook, Instagram and more.
-        </p>
-      </div>
-
-      <div class="grid gap-6 md:grid-cols-3">
-        <article class="reveal tilt-card glass rounded-2xl border border-slate-700/60 p-5">
-          <h3 class="text-sm font-semibold text-slate-50">Social media identity</h3>
-          <p class="mt-2 text-xs text-slate-300">
-            Profile & cover designs, highlight covers, story styles and templates so you look cohesive everywhere.
-          </p>
-          <ul class="mt-3 space-y-1 text-[11px] text-slate-400">
-            <li>• Profile & cover packages</li>
-            <li>• Story highlight system</li>
-            <li>• Branding for Facebook & Instagram</li>
-          </ul>
-        </article>
-
-        <article class="reveal tilt-card glass rounded-2xl border border-slate-700/60 p-5">
-          <h3 class="text-sm font-semibold text-slate-50">Content design systems</h3>
-          <p class="mt-2 text-xs text-slate-300">
-            Monthly post & story templates built as a system: promo, testimonial, menu, offer, and more.
-          </p>
-          <ul class="mt-3 space-y-1 text-[11px] text-slate-400">
-            <li>• Post & story kits</li>
-            <li>• Reusable Canva/Figma templates</li>
-            <li>• 3x3 grid concepts</li>
-          </ul>
-        </article>
-
-        <article class="reveal tilt-card glass rounded-2xl border border-slate-700/60 p-5">
-          <h3 class="text-sm font-semibold text-slate-50">Launch visuals & campaigns</h3>
-          <p class="mt-2 text-xs text-slate-300">
-            Visual direction for campaigns, from teaser to launch day, ready for boosting and ads later.
-          </p>
-          <ul class="mt-3 space-y-1 text-[11px] text-slate-400">
-            <li>• Launch & seasonal packs</li>
-            <li>• Feed-first concept boards</li>
-            <li>• Ad-ready assets</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- Work -->
-    <section id="work" class="mx-auto max-w-6xl px-4 pb-20">
-      <div class="reveal mb-8 flex items-end justify-between gap-4">
-        <div>
-          <p class="text-xs uppercase tracking-[0.2em] text-cyan-300">Selected concepts</p>
-          <h2 class="mt-1 text-2xl font-semibold text-slate-50">Concept shots</h2>
-          <p class="mt-2 max-w-xl text-sm text-slate-300">
-            A glimpse into how we think about lighting, depth, and hierarchy inside social layouts.
-          </p>
-        </div>
-        <span class="text-[11px] text-slate-400">Real client work coming soon.</span>
-      </div>
-
-      <div class="grid gap-6 md:grid-cols-2">
-        <!-- Concept 1 -->
-        <div class="reveal tilt-card glass relative overflow-hidden rounded-3xl border border-slate-700/60 p-5">
-          <div class="mb-3 flex items-center justify-between text-xs text-slate-300">
-            <span>Sylhet hotel launch grid</span>
-            <span class="rounded-full bg-cyan-400/10 px-2 py-0.5 text-[10px] text-cyan-200">Concept</span>
-          </div>
-          <div class="relative h-56 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-950 to-black">
-            <div class="absolute inset-0 grid grid-cols-3 gap-1 p-2">
-              <div class="rounded-xl bg-gradient-to-br from-cyan-400 via-sky-500 to-emerald-400"></div>
-              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
-              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
-              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
-              <div class="rounded-xl bg-gradient-to-br from-sky-500 via-cyan-400 to-emerald-400"></div>
-              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
-              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
-              <div class="rounded-xl bg-slate-900/80 border border-slate-700/70"></div>
-              <div class="rounded-xl bg-gradient-to-br from-cyan-400 via-emerald-400 to-sky-500"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Concept 2 -->
-        <div class="reveal tilt-card glass relative overflow-hidden rounded-3xl border border-slate-700/60 p-5">
-          <div class="mb-3 flex items-center justify-between text-xs text-slate-300">
-            <span>Restaurant story sequence</span>
-            <span class="rounded-full bg-cyan-400/10 px-2 py-0.5 text-[10px] text-cyan-200">Concept</span>
-          </div>
-          <div class="relative flex h-56 items-end justify-between gap-2 rounded-2xl bg-gradient-to-tr from-black via-slate-950 to-slate-900 px-4 pb-4">
-            <div class="h-full w-20 rounded-2xl bg-gradient-to-b from-cyan-400 via-sky-500 to-emerald-400"></div>
-            <div class="mb-5 h-40 w-20 rounded-2xl bg-slate-900/90 border border-slate-700/70"></div>
-            <div class="mb-10 h-32 w-20 rounded-2xl bg-slate-900/90 border border-slate-700/70"></div>
-            <div class="mb-[3.25rem] h-28 w-20 rounded-2xl bg-slate-900/90 border border-slate-700/70"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="mx-auto max-w-6xl px-4 pb-20">
-      <div class="reveal grid gap-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]">
-        <div>
-          <p class="text-xs uppercase tracking-[0.2em] text-cyan-300">About</p>
-          <h2 class="mt-1 text-2xl font-semibold text-slate-50">Built for social-first brands</h2>
-          <p class="mt-2 text-sm text-slate-300">
-            aolo.design is a small studio focused on visuals that feel premium but ship fast: perfect for hotels, cafes, and lifestyle brands launching in Sylhet and beyond.
-          </p>
-          <p class="mt-2 text-sm text-slate-300">
-            The goal is simple: make your social feeds look like a high-end landing page—clean hierarchy, depth, and motion-inspired layouts that stop the scroll.
-          </p>
-        </div>
-        <div class="tilt-card glass rounded-3xl border border-slate-700/60 p-5 text-xs text-slate-300">
-          <p class="text-[11px] uppercase tracking-[0.2em] text-cyan-200">Prototype process</p>
-          <ul class="mt-3 space-y-2">
-            <li>1. Quick call to understand your brand, menu, or offer.</li>
-            <li>2. 9-grid or story sequence concept designed within 72 hours.</li>
-            <li>3. Revisions, then a full template pack for the month.</li>
-          </ul>
-          <p class="mt-4 text-[11px] text-slate-400">
-            As you grow, we can layer in basic campaign planning and boosted posts while keeping the design system consistent.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="mx-auto max-w-6xl px-4 pb-24">
-      <div class="reveal grid gap-10 md:grid-cols-2">
-        <div>
-          <p class="text-xs uppercase tracking-[0.2em] text-cyan-300">Contact</p>
-          <h2 class="mt-1 text-2xl font-semibold text-slate-50">Start with one concept</h2>
-          <p class="mt-2 text-sm text-slate-300">
-            Share a bit about your business and what you want your socials to achieve. You’ll get a reply with a concept idea and a simple package suggestion.
-          </p>
-          <div class="mt-4 space-y-2 text-xs text-slate-400">
-            <p>• Ideal for hotels, restaurants, cafes, salons, and lifestyle brands.</p>
-            <p>• Based in Sylhet, working with clients across Bangladesh.</p>
-          </div>
-        </div>
-
-        <!-- Contact form -->
-        <form
-          id="contact-form"
-          class="tilt-card glass space-y-4 rounded-3xl border border-slate-700/60 p-5 text-sm"
-        >
-          <div>
-            <label class="mb-1 block text-xs font-medium text-slate-200" for="name">Name</label>
-            <input
-              id="name"
-              name="name"
-              required
-              class="w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
-              placeholder="Your name"
-            />
-          </div>
-          <div>
-            <label class="mb-1 block text-xs font-medium text-slate-200" for="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              class="w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
-              placeholder="you@example.com"
-            />
-          </div>
-          <div>
-            <label class="mb-1 block text-xs font-medium text-slate-200" for="project">Project details</label>
-            <textarea
-              id="project"
-              name="project"
-              rows="4"
-              required
-              class="w-full rounded-xl border border-slate-700/70 bg-slate-900/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400"
-              placeholder="Tell me about your brand, industry and what you want from your social media."
-            ></textarea>
-          </div>
-          <div class="flex items-center justify-between gap-3">
-            <button
-              type="submit"
-              class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-sky-500 px-5 py-2.5 text-xs font-semibold text-slate-950 shadow-lg shadow-cyan-500/40 hover:brightness-110 transition"
-            >
-              Send message
-              <span class="text-base">↗</span>
-            </button>
-            <p id="status" class="text-[11px] text-slate-400"></p>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-slate-800/70 bg-black/40 py-4 text-center text-[11px] text-slate-500">
-    © <span id="year"></span> aolo.design · Social media & visual studio
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Scroll reveal
-    const revealEls = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    revealEls.forEach((el) => observer.observe(el));
-
-    // Contact form: example using Formspree (replace with your endpoint)
-    const form = document.getElementById("contact-form");
-    const statusEl = document.getElementById("status");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      statusEl.textContent = "Sending...";
-      statusEl.classList.remove("text-emerald-400", "text-red-400");
-      statusEl.classList.add("text-slate-400");
-
-      try {
-        // Replace this URL with your Formspree / backend endpoint
-        const endpoint = "https://formspree.io/f/YOUR_FORM_ID";
-
-        const formData = new FormData(form);
-        const plainObj = {};
-        formData.forEach((value, key) => (plainObj[key] = value));
-
-        const res = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(plainObj),
-        });
-
-        if (res.ok) {
-          statusEl.textContent = "Message sent. You’ll hear back soon.";
-          statusEl.classList.remove("text-slate-400");
-          statusEl.classList.add("text-emerald-400");
-          form.reset();
-        } else {
-          throw new Error("Network error");
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aolo.design — Social-first visuals that feel premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      } catch (err) {
-        statusEl.textContent = "Something went wrong. Please try again.";
-        statusEl.classList.remove("text-slate-400");
-        statusEl.classList.add("text-red-400");
-      }
-    });
-  </script>
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0e1a;
+            color: #e8edf5;
+            overflow-x: hidden;
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            background: rgba(10, 14, 26, 0.8);
+        }
+        
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        .glow-cyan {
+            background: #06b6d4;
+            top: -200px;
+            right: -100px;
+        }
+        
+        .glow-blue {
+            background: #3b82f6;
+            bottom: -200px;
+            left: -100px;
+        }
+        
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease;
+        }
+        
+        .card-3d:hover {
+            transform: translateZ(20px) rotateX(2deg) rotateY(-2deg);
+        }
+        
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(6, 182, 212, 0.4);
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating-card {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+            50% { transform: translateY(-20px) rotateZ(1deg); }
+        }
+        
+        .calendly-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 700px;
+            margin: 0 auto;
+        }
+        
+        .calendly-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 16px;
+        }
+        
+        @media (max-width: 768px) {
+            .calendly-wrapper {
+                height: 600px;
+            }
+            .hero-glow {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#hero" class="text-xl font-semibold tracking-tight">
+                    <span class="text-cyan-400">aolo</span><span class="text-slate-200">.design</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-slate-300 hover:text-cyan-400 transition text-sm font-medium">Services</a>
+                    <a href="#work" class="text-slate-300 hover:text-cyan-400 transition text-sm font-medium">Work</a>
+                    <a href="#book-call" class="text-slate-300 hover:text-cyan-400 transition text-sm font-medium">Book Call</a>
+                    <a href="#contact" class="px-4 py-2 rounded-lg bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 transition text-sm font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-16">
+            <div class="hero-glow glow-cyan"></div>
+            <div class="hero-glow glow-blue"></div>
+            
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- Left: Content -->
+                    <div class="reveal">
+                        <p class="text-cyan-400 text-sm font-medium tracking-wide mb-6 uppercase">Social-first studio for ambitious brands</p>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                            Premium visuals that<br/>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">stop the scroll</span>
+                        </h1>
+                        <p class="text-slate-400 text-lg mb-8 max-w-xl">
+                            We craft scroll-stopping social content and brand visuals for hotels, restaurants, and lifestyle brands that demand attention.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
+                            <a href="#book-call" class="btn-primary px-8 py-4 rounded-lg text-white font-semibold inline-block">
+                                Book a free concept
+                            </a>
+                            <a href="#work" class="text-cyan-400 hover:text-cyan-300 font-medium inline-flex items-center group">
+                                View work
+                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="flex items-center gap-6 text-sm text-slate-500">
+                            <span>Hotels</span>
+                            <span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+                            <span>Restaurants</span>
+                            <span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+                            <span>Lifestyle brands</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: 3D Visual -->
+                    <div class="relative reveal" style="perspective: 1000px;">
+                        <div class="relative floating-card">
+                            <!-- Main card -->
+                            <div class="glass-card card-3d rounded-2xl p-8 relative overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10"></div>
+                                <div class="relative z-10">
+                                    <div class="w-full h-64 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl mb-4 overflow-hidden">
+                                        <div class="w-full h-full bg-gradient-to-tr from-cyan-500/20 via-transparent to-blue-500/20"></div>
+                                    </div>
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500"></div>
+                                        <div>
+                                            <div class="h-3 w-32 bg-slate-700 rounded mb-2"></div>
+                                            <div class="h-2 w-24 bg-slate-800 rounded"></div>
+                                        </div>
+                                    </div>
+                                    <div class="h-2 w-full bg-slate-800 rounded mb-2"></div>
+                                    <div class="h-2 w-3/4 bg-slate-800 rounded"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Floating accent cards -->
+                            <div class="absolute -top-6 -right-6 w-32 h-32 glass-card rounded-xl bg-gradient-to-br from-cyan-500/20 to-transparent blur-sm" style="transform: translateZ(30px) rotateZ(12deg);"></div>
+                            <div class="absolute -bottom-6 -left-6 w-28 h-28 glass-card rounded-xl bg-gradient-to-br from-blue-500/20 to-transparent blur-sm" style="transform: translateZ(30px) rotateZ(-8deg);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book a Call Section -->
+        <section id="book-call" class="relative py-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Plan your launch</h2>
+                    <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                        Book a free 30-minute strategy session and we'll show you how to elevate your brand's social presence.
+                    </p>
+                </div>
+                
+                <div class="reveal glass-card rounded-2xl p-6 md:p-8">
+                    <div class="calendly-wrapper">
+                        <iframe
+                            src="https://calendly.com/YOUR_LINK"
+                            title="Book a meeting with aolo.design"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="relative py-24">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-cyan-400 text-sm font-medium tracking-wide mb-4 uppercase">What we do</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Premium content, consistent results</h2>
+                    <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                        Everything you need to build a scroll-stopping social presence.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card card-3d rounded-xl p-8 reveal">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Social Content</h3>
+                        <p class="text-slate-400">Instagram posts, stories, and reels designed to capture attention and build your brand identity.</p>
+                    </div>
+                    
+                    <div class="glass-card card-3d rounded-xl p-8 reveal">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Brand Identity</h3>
+                        <p class="text-slate-400">Cohesive visual systems including logos, color palettes, and brand guidelines that define your presence.</p>
+                    </div>
+                    
+                    <div class="glass-card card-3d rounded-xl p-8 reveal">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center mb-6">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Digital Assets</h3>
+                        <p class="text-slate-400">Menu designs, promotional graphics, and digital collateral that convert browsers into customers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="relative py-24 bg-slate-950/50">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16 reveal">
+                    <p class="text-cyan-400 text-sm font-medium tracking-wide mb-4 uppercase">Our work</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Designed to perform</h2>
+                    <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+                        A selection of recent projects for brands that value premium aesthetics.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="glass-card card-3d rounded-xl overflow-hidden reveal group">
+                        <div class="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/30 via-transparent to-blue-500/30 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Luxury Hotel Campaign</h3>
+                            <p class="text-slate-400 text-sm mb-4">Complete social media rebrand for a boutique property in Sylhet</p>
+                            <span class="text-cyan-400 text-sm font-medium">Hospitality • Branding</span>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card card-3d rounded-xl overflow-hidden reveal group">
+                        <div class="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/30 via-transparent to-cyan-500/30 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Restaurant Launch</h3>
+                            <p class="text-slate-400 text-sm mb-4">Full brand identity and launch campaign for premium dining</p>
+                            <span class="text-cyan-400 text-sm font-medium">F&B • Social Content</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="relative py-24">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to elevate your brand?</h2>
+                    <p class="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
+                        Let's create visuals that command attention and drive results. Book your free consultation today.
+                    </p>
+                    <a href="#book-call" class="btn-primary px-8 py-4 rounded-lg text-white font-semibold inline-block">
+                        Book a free concept
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-xl font-semibold">
+                    <span class="text-cyan-400">aolo</span><span class="text-slate-200">.design</span>
+                </div>
+                <p class="text-slate-500 text-sm">© 2026 aolo.design. Social-first visuals that feel premium.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-slate-400 hover:text-cyan-400 transition">Instagram</a>
+                    <a href="#" class="text-slate-400 hover:text-cyan-400 transition">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Subtle parallax effect on hero cards
+        const heroVisual = document.querySelector('.floating-card');
+        if (heroVisual) {
+            document.addEventListener('mousemove', (e) => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 20;
+                const y = (e.clientY / window.innerHeight - 0.5) * 20;
+                heroVisual.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
+            });
+        }
+
+        // Card hover tilt effect
+        document.querySelectorAll('.card-3d').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
+                const y = ((e.clientY - rect.top) / rect.height - 0.5) * 10;
+                card.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg) translateZ(10px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateZ(0px)';
+            });
+        });
+    </script>
 </body>
 </html>
