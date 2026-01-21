@@ -18,16 +18,16 @@ int main() {
     }
 
     if(allUpper){
-        if(s[0]>='a' && s[0]<='z'){
-            s[0] = toupper(s[0]);
-        }
-
-        for(int i=1;i<size;i++){
-            s[i] = tolower(s[i]);
+        for(char &ch:s){
+            if(islower(ch)) ch = toupper(ch);
+            else{
+                ch=tolower(ch);
+            }
         }
     }
 
     cout << s << endl;
 
     return 0;
+    
 }
