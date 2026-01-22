@@ -6,12 +6,12 @@ int main() {
     int n;
     cin >> n;
 
-    if(n==15 || n==20 || n==25){
-        cout << "YES" << endl;
+    if(n==15 || n==20 || n==21){
+        cout << "NO" << endl;
         return 0;
     } 
 
-    cout << "NO" << endl;
+    cout << "YES" << endl;
 
     return 0;
 }
