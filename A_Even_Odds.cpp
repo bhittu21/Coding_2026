@@ -2,14 +2,16 @@
 using namespace std;
 
 int main() {
-    int test_case;
-    cin >> test_case;
+    
+    long long x,y;
+    cin >> x >> y;
 
-    while (test_case--) {
-        int x;
-        cin >> x;
-
-        
+    if(y <= ((x+1)/2)){
+        // odd
+        cout << (2*y)-1 << endl;
+    } else {
+        // even
+        cout << 2*(y-((x+1)/2)) << endl;
     }
 
     return 0;
