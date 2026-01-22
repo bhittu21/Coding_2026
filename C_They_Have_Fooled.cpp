@@ -6,7 +6,7 @@ int main() {
     int n;
     cin >> n;
 
-    vector<int> counts = {10, 10, 8, 9, 8, 7, 7, 7, 7, 0, 9, 6, 9};
+    vector<int> counts = {10, 10, 8, 9, 8, 7, 7, 7, 7, 0, 9, 6, 8};
 
     cout << counts[n] << endl;
 
